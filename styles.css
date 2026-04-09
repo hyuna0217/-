@@ -1,0 +1,104 @@
+:root {
+  --bg: #0f1220;
+  --card: #181c31;
+  --text: #eef2ff;
+  --muted: #b7bed9;
+  --accent: #6f8cff;
+  --border: #2d365e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at top right, #1f2550, var(--bg));
+  color: var(--text);
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header h1 { margin-bottom: 8px; }
+header p { color: var(--muted); margin-top: 0; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  margin: 18px 0;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+label { display: flex; flex-direction: column; gap: 6px; }
+
+input {
+  background: #12162a;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+fieldset {
+  grid-column: 1 / -1;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.school-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.school-item {
+  background: #12162a;
+  border-radius: 8px;
+  padding: 6px 8px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+button {
+  grid-column: 1 / -1;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #6f8cff, #8a67ff);
+  color: white;
+  padding: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.timeline {
+  display: grid;
+  gap: 10px;
+  padding-left: 22px;
+}
+
+.timeline li {
+  background: #12162a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.muted { color: var(--muted); }
+
+@media (max-width: 700px) {
+  form { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniPath - 미국학부 Top30 로드맵</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>UniPath</h1>
+        <p>미국 학부 Top30 지원 로드맵 자동 생성</p>
+      </header>
+
+      <section class="card">
+        <h2>1) 지원 정보 입력</h2>
+        <form id="planner-form">
+          <label>
+            지원 시작일
+            <input type="date" id="start-date" required />
+          </label>
+          <label>
+            공통 제출 마감일
+            <input type="date" id="deadline-date" required />
+          </label>
+          <label>
+            SAT 목표점수
+            <input type="number" id="sat-target" min="400" max="1600" value="1450" />
+          </label>
+          <label>
+            TOEFL 목표점수
+            <input type="number" id="toefl-target" min="0" max="120" value="100" />
+          </label>
+
+          <fieldset>
+            <legend>지원 학교 (Top30 중 선택)</legend>
+            <div id="school-list" class="school-list"></div>
+          </fieldset>
+
+          <button type="submit">로드맵 생성</button>
+        </form>
+      </section>
+
+      <section class="card" id="results" hidden>
+        <h2>2) 자동 생성 로드맵</h2>
+        <div id="summary"></div>
+        <ol id="timeline" class="timeline"></ol>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
